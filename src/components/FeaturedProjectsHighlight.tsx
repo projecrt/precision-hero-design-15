@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
 const FeatureItem = ({
   title,
   description
@@ -21,7 +19,6 @@ const FeatureItem = ({
       </div>
     </div>;
 };
-
 const PartnerLogo = ({
   name
 }: {
@@ -31,9 +28,8 @@ const PartnerLogo = ({
       {name}
     </div>;
 };
-
 const FeaturedProjectsHighlight = () => {
-  return <section className="bg-[#0A0F12] py-12 relative overflow-hidden">
+  return <section className="py-12 relative overflow-hidden bg-zinc-900">
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <svg viewBox="0 0 200 800" xmlns="http://www.w3.org/2000/svg">
@@ -88,5 +84,4 @@ const FeaturedProjectsHighlight = () => {
       </div>
     </section>;
 };
-
 export default FeaturedProjectsHighlight;
