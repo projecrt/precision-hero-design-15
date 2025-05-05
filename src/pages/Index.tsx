@@ -8,6 +8,7 @@ import FeaturedProjectsHighlight from "../components/FeaturedProjectsHighlight";
 import ConsultationBanner from "../components/ConsultationBanner";
 import ClientTestimonialSection from "../components/ClientTestimonialSection";
 import FAQSection from "../components/FAQSection";
+import BusinessNumbersSection from "../components/BusinessNumbersSection";
 
 const Index: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const Index: React.FC = () => {
       <ConsultationBanner />
       <ClientTestimonialSection />
       <FAQSection />
+      <BusinessNumbersSection />
     </div>
   );
 };
