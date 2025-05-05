@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom colors used throughout the site
+        'highlight-yellow': '#FFD700', // Golden yellow for highlights
+        'light-gray': '#CBD5E1', // Light gray for text
+        'sublabel-gray': '#94A3B8', // Lighter gray for sublabels
+        'cta-blue': '#3D8BFF', // Bright blue for call-to-action buttons
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -69,5 +74,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/line-clamp')],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
