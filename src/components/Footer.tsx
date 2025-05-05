@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, Facebook, Twitter, Youtube, Pinterest } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Youtube, Instagram } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
@@ -104,7 +104,7 @@ const Footer = () => {
                 <Youtube className="h-5 w-5" />
               </button>
               <button className="bg-gray-800 p-2.5 rounded-full hover:bg-gray-700 transition-colors">
-                <Pinterest className="h-5 w-5" />
+                <Instagram className="h-5 w-5" />
               </button>
             </div>
           </div>
