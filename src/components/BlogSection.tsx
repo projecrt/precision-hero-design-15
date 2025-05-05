@@ -9,7 +9,7 @@ const blogPosts = [
   {
     id: 1,
     title: 'Precision Laser Cutting: Advanced Techniques for Modern Manufacturing',
-    description: 'Exploring the latest advancements in laser cutting technology and how they're revolutionizing manufacturing processes across industries.',
+    description: "Exploring the latest advancements in laser cutting technology and how they're revolutionizing manufacturing processes across industries.",
     category: 'ENGINEERING',
     date: '16 FEB',
     image: '/lovable-uploads/29982958-a02a-46c9-86fb-fdd0b5dc6481.png' // Using one of the existing uploaded images
