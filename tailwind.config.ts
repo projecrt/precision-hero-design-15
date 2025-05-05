@@ -69,5 +69,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")], // Removed @tailwindcss/line-clamp as it's now included by default
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/line-clamp')],
 } satisfies Config;
