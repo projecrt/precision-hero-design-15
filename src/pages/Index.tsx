@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import WhoWeAreSection from '@/components/WhoWeAreSection';
 import WhatWeDoSection from '@/components/WhatWeDoSection';
 import FeaturedProjectsSection from '@/components/FeaturedProjectsSection';
+import FeaturedProjectsHighlight from '@/components/FeaturedProjectsHighlight';
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <WhoWeAreSection />
       <WhatWeDoSection />
       <FeaturedProjectsSection />
+      <FeaturedProjectsHighlight />
     </div>
   );
 };
