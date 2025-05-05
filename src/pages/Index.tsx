@@ -1,23 +1,23 @@
 
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import WhoWeAreSection from '@/components/WhoWeAreSection';
-import WhatWeDoSection from '@/components/WhatWeDoSection';
-import FeaturedProjectsSection from '@/components/FeaturedProjectsSection';
-import FeaturedProjectsHighlight from '@/components/FeaturedProjectsHighlight';
-import ConsultationBanner from '@/components/ConsultationBanner';
+import React from "react";
+import HeroSection from "../components/HeroSection";
+import WhatWeDoSection from "../components/WhatWeDoSection";
+import WhoWeAreSection from "../components/WhoWeAreSection";
+import FeaturedProjectsSection from "../components/FeaturedProjectsSection";
+import FeaturedProjectsHighlight from "../components/FeaturedProjectsHighlight";
+import ConsultationBanner from "../components/ConsultationBanner";
+import ClientTestimonialSection from "../components/ClientTestimonialSection";
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen bg-sky-950">
-      <Navbar />
+    <div className="bg-white">
       <HeroSection />
-      <WhoWeAreSection />
       <WhatWeDoSection />
+      <WhoWeAreSection />
       <FeaturedProjectsSection />
       <FeaturedProjectsHighlight />
       <ConsultationBanner />
+      <ClientTestimonialSection />
     </div>
   );
 };
