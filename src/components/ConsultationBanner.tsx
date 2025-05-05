@@ -6,25 +6,16 @@ import { Button } from '@/components/ui/button';
 const ConsultationBanner = () => {
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Background Image with Gradient Overlay */}
-      <div className="relative h-[400px] md:h-[300px] w-full">
-        {/* Background Image - Industrial welder with sparks */}
-        <div className="absolute top-0 left-0 w-[70%] h-full">
-          <img 
-            src="/lovable-uploads/9d3d61ff-3d00-4d16-8b53-70f573b03f22.png" 
-            alt="Industrial welder working with visible sparks" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* Container with sky background and rounded corners */}
+      <div className="relative h-[400px] md:h-[300px] w-full bg-sky-950 rounded-xl mx-auto my-8 max-w-7xl">
+        {/* Gradient Overlay - Maintain some visual interest */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-sky-950 via-sky-900 to-sky-950 rounded-xl"></div>
         
-        {/* Gradient Overlay - Left to right (transparent to black) */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-black/70 to-black"></div>
-        
-        {/* Content Container - Right aligned */}
-        <div className="absolute top-0 right-0 h-full w-full md:w-[60%] flex items-center justify-end">
-          <div className="p-8 md:p-12 max-w-lg flex flex-col items-end space-y-6">
+        {/* Content Container - Centered */}
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+          <div className="p-8 md:p-12 max-w-lg flex flex-col items-center space-y-6 text-center">
             {/* Heading - 3 lines with different styling */}
-            <div className="text-right">
+            <div>
               <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
                 <span className="text-white block mb-1">Looking For the Best</span>
                 <span className="text-highlight-yellow block mb-1">Laser Cutting</span>
