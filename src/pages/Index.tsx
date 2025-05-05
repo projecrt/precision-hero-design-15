@@ -9,6 +9,7 @@ import ConsultationBanner from "../components/ConsultationBanner";
 import ClientTestimonialSection from "../components/ClientTestimonialSection";
 import FAQSection from "../components/FAQSection";
 import BusinessNumbersSection from "../components/BusinessNumbersSection";
+import FinalCTA from "../components/FinalCTA";
 
 const Index: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Index: React.FC = () => {
       <ClientTestimonialSection />
       <FAQSection />
       <BusinessNumbersSection />
+      <FinalCTA />
     </div>
   );
 };
