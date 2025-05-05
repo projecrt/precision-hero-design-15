@@ -1,12 +1,24 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Play } from 'lucide-react';
+import './HeroSection.css';
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#0A1A20] min-h-[90vh] flex items-center">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="relative min-h-[90vh] flex items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/23c0c4b8-cbdf-4a78-934a-8cebcb337cdf.png"
+          alt="Laser cutting with sparks"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40"></div> {/* Dark overlay for better text readability */}
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Left content - Main heading and CTA */}
           <div className="mb-12 md:mb-0 md:w-1/2">
