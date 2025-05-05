@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+
 const FeatureItem = ({
   title,
   description
@@ -11,25 +13,27 @@ const FeatureItem = ({
 }) => {
   return <div className="flex items-start space-x-3">
       <div className="mt-1 flex-shrink-0">
-        <Check className="h-5 w-5 text-highlight-yellow" />
+        <Check className="h-4 w-4 text-highlight-yellow" />
       </div>
       <div>
-        <h4 className="font-bold text-white text-base">{title}</h4>
-        <p className="text-sm text-[#CBD5E1]">{description}</p>
+        <h4 className="font-bold text-white text-sm">{title}</h4>
+        <p className="text-xs text-[#CBD5E1]">{description}</p>
       </div>
     </div>;
 };
+
 const PartnerLogo = ({
   name
 }: {
   name: string;
 }) => {
-  return <div className="text-white font-bold">
+  return <div className="text-white font-bold text-sm">
       {name}
     </div>;
 };
+
 const FeaturedProjectsHighlight = () => {
-  return <section className="bg-[#0A0F12] py-20 relative overflow-hidden">
+  return <section className="bg-[#0A0F12] py-12 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <svg viewBox="0 0 200 800" xmlns="http://www.w3.org/2000/svg">
@@ -37,35 +41,35 @@ const FeaturedProjectsHighlight = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mb-16">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="max-w-2xl mb-10">
           {/* Badge */}
-          <Badge variant="outline" className="mb-4 text-gray-400 uppercase text-xs tracking-wider border-[#374151] px-3 py-1">
+          <Badge variant="outline" className="mb-3 text-gray-400 uppercase text-xs tracking-wider border-[#374151] px-2 py-1">
             FEATURED PROJECTS
           </Badge>
           
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-4">
             We Give Precision<br />
             <span className="text-highlight-yellow">Efficiency And Excellence For Services.</span>
           </h2>
           
           {/* CTA Button */}
-          <Button className="bg-white hover:bg-gray-100 text-black rounded-full px-6">
-            Learn More <ArrowRight className="ml-1 h-4 w-4" />
+          <Button className="bg-white hover:bg-gray-100 text-black rounded-full px-5 py-1 text-sm">
+            Learn More <ArrowRight className="ml-1 h-3 w-3" />
           </Button>
         </div>
         
         {/* Middle Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-16">
-          {/* Left Image - Updated with reliable image */}
-          <div className="lg:col-span-3 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-12">
+          {/* Left Image */}
+          <div className="lg:col-span-2 rounded-xl overflow-hidden h-72">
             <img alt="Engineers in industrial setting" className="w-full h-full object-cover" src="/lovable-uploads/29982958-a02a-46c9-86fb-fdd0b5dc6481.png" />
           </div>
           
           {/* Right Feature Grid */}
-          <div className="lg:col-span-2 bg-[#1E293B] rounded-2xl p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#1E293B] rounded-xl p-5">
+            <div className="grid grid-cols-1 gap-4">
               <FeatureItem title="Industry-Leading Accuracy" description="Precision engineering with tight tolerances" />
               <FeatureItem title="Fast Turnaround Time" description="Efficient production with quick delivery" />
               <FeatureItem title="Custom Solutions" description="Tailored manufacturing to your needs" />
@@ -75,13 +79,14 @@ const FeaturedProjectsHighlight = () => {
         </div>
         
         {/* Partner Logos */}
-        <div className="flex flex-wrap justify-center items-center gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-8">
           <PartnerLogo name="IPSUM" />
-          <PartnerLogo name="Logoipsum Brand Standard" />
           <PartnerLogo name="LOGO" />
           <PartnerLogo name="LUMY" />
+          <PartnerLogo name="BRAND" />
         </div>
       </div>
     </section>;
 };
+
 export default FeaturedProjectsHighlight;
