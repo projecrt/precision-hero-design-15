@@ -6,6 +6,7 @@ import WhoWeAreSection from '@/components/WhoWeAreSection';
 import WhatWeDoSection from '@/components/WhatWeDoSection';
 import FeaturedProjectsSection from '@/components/FeaturedProjectsSection';
 import FeaturedProjectsHighlight from '@/components/FeaturedProjectsHighlight';
+import ConsultationBanner from '@/components/ConsultationBanner';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <WhatWeDoSection />
       <FeaturedProjectsSection />
       <FeaturedProjectsHighlight />
+      <ConsultationBanner />
     </div>
   );
 };
