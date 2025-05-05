@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Tool } from 'lucide-react';
+import { ArrowRight, Wrench } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 
@@ -35,7 +35,7 @@ const ServiceCard = ({
           </div>
           <div className="absolute top-4 left-1/2 -translate-x-1/2">
             <Badge className="bg-white text-black px-4 py-2 rounded-full">
-              <Tool className="h-4 w-4 mr-1" />
+              <Wrench className="h-4 w-4 mr-1" />
               <span className="text-xs font-medium">Precision</span>
             </Badge>
           </div>
@@ -44,7 +44,7 @@ const ServiceCard = ({
         // Solid background card with yellow icon badge
         <div className="absolute top-0 left-6">
           <div className="bg-highlight-yellow rounded-b-xl px-5 py-3">
-            <Tool className="h-5 w-5 text-black" />
+            <Wrench className="h-5 w-5 text-black" />
           </div>
         </div>
       )}
