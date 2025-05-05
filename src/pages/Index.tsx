@@ -1,31 +1,33 @@
 
-import React from "react";
-import HeroSection from "../components/HeroSection";
-import WhatWeDoSection from "../components/WhatWeDoSection";
-import WhoWeAreSection from "../components/WhoWeAreSection";
-import FeaturedProjectsSection from "../components/FeaturedProjectsSection";
-import FeaturedProjectsHighlight from "../components/FeaturedProjectsHighlight";
-import ConsultationBanner from "../components/ConsultationBanner";
-import ClientTestimonialSection from "../components/ClientTestimonialSection";
-import FAQSection from "../components/FAQSection";
-import BusinessNumbersSection from "../components/BusinessNumbersSection";
-import FinalCTA from "../components/FinalCTA";
+import React from 'react';
+import HeroSection from '../components/HeroSection';
+import WhoWeAreSection from '../components/WhoWeAreSection';
+import WhatWeDoSection from '../components/WhatWeDoSection';
+import FeaturedProjectsSection from '../components/FeaturedProjectsSection';
+import FeaturedProjectsHighlight from '../components/FeaturedProjectsHighlight';
+import BusinessNumbersSection from '../components/BusinessNumbersSection';
+import ClientTestimonialSection from '../components/ClientTestimonialSection';
+import FAQSection from '../components/FAQSection';
+import ConsultationBanner from '../components/ConsultationBanner';
+import BlogSection from '../components/BlogSection';
+import FinalCTA from '../components/FinalCTA';
 
-const Index: React.FC = () => {
+function Index() {
   return (
-    <div className="bg-white">
+    <>
       <HeroSection />
-      <WhatWeDoSection />
       <WhoWeAreSection />
+      <WhatWeDoSection />
       <FeaturedProjectsSection />
       <FeaturedProjectsHighlight />
-      <ConsultationBanner />
+      <BusinessNumbersSection />
       <ClientTestimonialSection />
       <FAQSection />
-      <BusinessNumbersSection />
+      <ConsultationBanner />
+      <BlogSection />
       <FinalCTA />
-    </div>
+    </>
   );
-};
+}
 
 export default Index;
