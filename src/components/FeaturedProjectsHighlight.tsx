@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+
 const FeatureItem = ({
   title,
   description
@@ -9,7 +11,8 @@ const FeatureItem = ({
   title: string;
   description: string;
 }) => {
-  return <div className="flex items-start space-x-3">
+  return (
+    <div className="flex items-start space-x-3">
       <div className="mt-1 flex-shrink-0">
         <Check className="h-4 w-4 text-highlight-yellow" />
       </div>
@@ -17,19 +20,25 @@ const FeatureItem = ({
         <h4 className="font-bold text-white text-sm">{title}</h4>
         <p className="text-xs text-[#CBD5E1]">{description}</p>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 const PartnerLogo = ({
   name
 }: {
   name: string;
 }) => {
-  return <div className="text-white font-bold text-sm">
+  return (
+    <div className="text-white font-bold text-sm">
       {name}
-    </div>;
+    </div>
+  );
 };
+
 const FeaturedProjectsHighlight = () => {
-  return <section className="py-12 relative overflow-hidden bg-neutral-950">
+  return (
+    <section className="py-16 relative overflow-hidden bg-[#0A0F12]">
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <svg viewBox="0 0 200 800" xmlns="http://www.w3.org/2000/svg">
@@ -37,51 +46,69 @@ const FeaturedProjectsHighlight = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="max-w-2xl mb-10">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <div className="max-w-2xl mb-12">
           {/* Badge */}
-          <Badge variant="outline" className="mb-3 text-gray-400 uppercase text-xs tracking-wider border-[#374151] px-2 py-1">
+          <Badge variant="outline" className="mb-4 text-gray-400 uppercase text-xs tracking-wider border-[#374151] px-2 py-1">
             FEATURED PROJECTS
           </Badge>
           
-          {/* Heading */}
-          <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-4">
+          {/* Heading - Updated styling */}
+          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
             We Give Precision<br />
             <span className="text-highlight-yellow">Efficiency And Excellence For Services.</span>
           </h2>
           
-          {/* CTA Button */}
-          <Button className="bg-white hover:bg-gray-100 text-black rounded-full px-5 py-1 text-sm">
-            Learn More <ArrowRight className="ml-1 h-3 w-3" />
+          {/* CTA Button - Updated to pill shape with more padding */}
+          <Button className="bg-white hover:bg-gray-100 text-gray-900 rounded-full px-6 py-3 text-sm font-medium">
+            Learn More <ArrowRight className="ml-1 h-4 w-4" />
           </Button>
         </div>
         
-        {/* Middle Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-12">
-          {/* Left Image */}
-          <div className="lg:col-span-2 rounded-xl overflow-hidden h-72">
-            <img alt="Engineers in industrial setting" className="w-full h-full object-cover" src="/lovable-uploads/29982958-a02a-46c9-86fb-fdd0b5dc6481.png" />
+        {/* Middle Grid - Updated with proper rounded corners */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+          {/* Left Image - Added more rounded corners */}
+          <div className="lg:col-span-2 rounded-2xl overflow-hidden h-80">
+            <img 
+              alt="Engineers in industrial setting" 
+              className="w-full h-full object-cover" 
+              src="/lovable-uploads/29982958-a02a-46c9-86fb-fdd0b5dc6481.png" 
+            />
           </div>
           
-          {/* Right Feature Grid */}
-          <div className="bg-[#1E293B] rounded-xl p-5">
-            <div className="grid grid-cols-1 gap-4">
-              <FeatureItem title="Industry-Leading Accuracy" description="Precision engineering with tight tolerances" />
-              <FeatureItem title="Fast Turnaround Time" description="Efficient production with quick delivery" />
-              <FeatureItem title="Custom Solutions" description="Tailored manufacturing to your needs" />
-              <FeatureItem title="Eco-Friendly Processes" description="Sustainable production methods" />
+          {/* Right Feature Grid - Updated background color and padding */}
+          <div className="bg-[#1E293B] rounded-2xl p-6">
+            <div className="grid grid-cols-2 gap-5">
+              <FeatureItem 
+                title="Industry-Leading Accuracy" 
+                description="Precision engineering with tight tolerances" 
+              />
+              <FeatureItem 
+                title="Fast Turnaround Time" 
+                description="Efficient production with quick delivery" 
+              />
+              <FeatureItem 
+                title="Custom Solutions" 
+                description="Tailored manufacturing to your needs" 
+              />
+              <FeatureItem 
+                title="Eco-Friendly Processes" 
+                description="Sustainable production methods" 
+              />
             </div>
           </div>
         </div>
         
-        {/* Partner Logos */}
-        <div className="flex flex-wrap justify-center items-center gap-8">
+        {/* Partner Logos - Better spacing and alignment */}
+        <div className="flex flex-wrap justify-center items-center gap-12 py-4">
           <PartnerLogo name="IPSUM" />
+          <PartnerLogo name="LOGOIPSUM" />
           <PartnerLogo name="LOGO" />
           <PartnerLogo name="LUMY" />
-          <PartnerLogo name="BRAND" />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default FeaturedProjectsHighlight;
