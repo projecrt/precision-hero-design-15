@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const ConsultationBanner = () => {
-  return <section className="relative w-full overflow-hidden">
+  return <section className="relative w-full overflow-hidden bg-slate-50">
       {/* Container with sky background and rounded corners */}
       <div className="relative h-[400px] md:h-[300px] w-full bg-sky-950 rounded-xl mx-auto my-8 max-w-7xl">
         {/* Gradient Overlay - Maintain some visual interest */}
