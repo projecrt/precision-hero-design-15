@@ -29,7 +29,7 @@ const PartnerLogo = ({
     </div>;
 };
 const FeaturedProjectsHighlight = () => {
-  return <section className="py-12 relative overflow-hidden bg-zinc-900">
+  return <section className="py-12 relative overflow-hidden bg-neutral-950">
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <svg viewBox="0 0 200 800" xmlns="http://www.w3.org/2000/svg">
