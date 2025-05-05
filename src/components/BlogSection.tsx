@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import BlogCard from './BlogCard';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Sample blog data
 const blogPosts = [
@@ -33,28 +34,29 @@ const blogPosts = [
 ];
 
 const BlogSection = () => {
+  const isMobile = useIsMobile();
+  
   return (
-    <section className="bg-slate-100 py-24">
+    <section className="bg-slate-100 py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-          <div className="mb-6 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-12">
+          <div className="mb-6 md:mb-0 text-center md:text-left">
             <span className="inline-block bg-white text-gray-500 text-xs uppercase tracking-wider py-1 px-3 rounded-full border border-gray-200 mb-3">
               OUR BLOG
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Let's Discover Our Latest <br />
-              <span className="text-yellow-400">High–Precision</span> <br />
-              And Updates
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              Let's Discover Our Latest 
+              <span className="block sm:inline"> <span className="text-yellow-400">High–Precision</span> And Updates</span>
             </h2>
           </div>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full">
+          <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm sm:text-base px-5 py-2 sm:py-3">
             See All Blog <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
         
         {/* Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogPosts.map(post => (
             <BlogCard 
               key={post.id} 

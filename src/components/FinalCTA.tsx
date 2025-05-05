@@ -12,17 +12,17 @@ const FinalCTA: React.FC = () => {
       </div>
       
       {/* Content container */}
-      <div className="relative container mx-auto py-24 px-4 flex flex-col items-center justify-center text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
+      <div className="relative container mx-auto py-16 sm:py-20 md:py-24 px-4 flex flex-col items-center justify-center text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-white">
           Let's Bring Your Vision To Life<br />
           With <span className="text-yellow-400">High–Precision</span><br />
           Engineering.
         </h2>
         
         <Button 
-          className="bg-white text-gray-900 hover:bg-white/90 text-base px-8 py-6 h-auto"
+          className="bg-white text-gray-900 hover:bg-white/90 text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-6 h-auto"
         >
-          Start Your Project <ArrowRight className="ml-1" />
+          Start Your Project <ArrowRight className="ml-1 h-4 w-4" />
         </Button>
       </div>
     </section>

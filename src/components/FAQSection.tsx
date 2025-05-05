@@ -7,8 +7,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const FAQSection = () => {
+  const isMobile = useIsMobile();
+  
   // FAQ data structure with questions and answers
   const faqsColumn1 = [
     {
@@ -73,12 +76,15 @@ const FAQSection = () => {
     },
   ];
 
-  // Custom AccordionItem component - fixed to not use render props incorrectly
+  // Combined FAQs for mobile view
+  const allFaqs = [...faqsColumn1, ...faqsColumn2, ...faqsColumn3];
+
+  // Custom AccordionItem component
   const CustomAccordionItem = ({ item }) => {
     return (
-      <AccordionItem value={item.id} className="mb-6 border-none">
+      <AccordionItem value={item.id} className="mb-4 sm:mb-6 border-none">
         <AccordionTrigger
-          className={`px-6 py-4 hover:no-underline hover:text-opacity-80 font-medium text-base rounded-2xl w-full h-16 flex items-center ${
+          className={`px-4 sm:px-6 py-3 sm:py-4 hover:no-underline hover:text-opacity-80 font-medium text-sm sm:text-base rounded-xl sm:rounded-2xl w-full h-auto min-h-[3.5rem] sm:min-h-[4rem] flex items-center ${
             item.defaultOpen
               ? "bg-blue-900 text-white"
               : "bg-slate-100 text-gray-900"
@@ -86,13 +92,13 @@ const FAQSection = () => {
         >
           <div className="text-left flex-1">{item.question}</div>
           {item.defaultOpen ? (
-            <ChevronUp className="h-5 w-5 shrink-0" />
+            <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
           ) : (
-            <ChevronDown className="h-5 w-5 shrink-0 text-gray-400" />
+            <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-gray-400" />
           )}
         </AccordionTrigger>
-        <AccordionContent className={`px-6 pb-4 pt-0 text-gray-500 text-sm ${
-          item.defaultOpen ? "bg-blue-900 rounded-b-2xl" : ""
+        <AccordionContent className={`px-4 sm:px-6 pb-4 pt-0 text-gray-500 text-xs sm:text-sm ${
+          item.defaultOpen ? "bg-blue-900 rounded-b-xl sm:rounded-b-2xl" : ""
         }`}>
           {item.answer}
         </AccordionContent>
@@ -101,11 +107,11 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="bg-white py-20 px-4">
+    <section className="bg-white py-12 sm:py-16 md:py-20 px-4">
       <div className="container mx-auto max-w-7xl">
         {/* Section Label */}
-        <div className="flex justify-center mb-5">
-          <div className="inline-flex items-center px-4 py-1.5 border border-gray-200 rounded-full">
+        <div className="flex justify-center mb-4 sm:mb-5">
+          <div className="inline-flex items-center px-3 sm:px-4 py-1 sm:py-1.5 border border-gray-200 rounded-full">
             <span className="text-gray-500 text-xs font-medium tracking-wider uppercase">
               USUALLY ASKED
             </span>
@@ -113,57 +119,74 @@ const FAQSection = () => {
         </div>
 
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             <span className="block mb-1">Discover Our Usually</span>
             <span className="text-yellow-400">Asked Question From Clients.</span>
           </h2>
         </div>
 
-        {/* FAQ Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Column 1 */}
-          <div className="space-y-6">
+        {/* FAQ Grid - Responsive Layout */}
+        {isMobile ? (
+          // Mobile view - single column
+          <div className="space-y-4">
             <Accordion
               type="single"
-              defaultValue={faqsColumn1.find(item => item.defaultOpen)?.id}
+              defaultValue={allFaqs.find(item => item.defaultOpen)?.id}
               collapsible
-              className="space-y-6"
+              className="space-y-4"
             >
-              {faqsColumn1.map((faq) => (
+              {allFaqs.slice(0, 6).map((faq) => (
                 <CustomAccordionItem key={faq.id} item={faq} />
               ))}
             </Accordion>
           </div>
+        ) : (
+          // Desktop view - three columns
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            {/* Column 1 */}
+            <div className="space-y-4 sm:space-y-6">
+              <Accordion
+                type="single"
+                defaultValue={faqsColumn1.find(item => item.defaultOpen)?.id}
+                collapsible
+                className="space-y-4 sm:space-y-6"
+              >
+                {faqsColumn1.map((faq) => (
+                  <CustomAccordionItem key={faq.id} item={faq} />
+                ))}
+              </Accordion>
+            </div>
 
-          {/* Column 2 */}
-          <div className="space-y-6">
-            <Accordion
-              type="single"
-              defaultValue={faqsColumn2.find(item => item.defaultOpen)?.id}
-              collapsible
-              className="space-y-6"
-            >
-              {faqsColumn2.map((faq) => (
-                <CustomAccordionItem key={faq.id} item={faq} />
-              ))}
-            </Accordion>
-          </div>
+            {/* Column 2 */}
+            <div className="space-y-4 sm:space-y-6">
+              <Accordion
+                type="single"
+                defaultValue={faqsColumn2.find(item => item.defaultOpen)?.id}
+                collapsible
+                className="space-y-4 sm:space-y-6"
+              >
+                {faqsColumn2.map((faq) => (
+                  <CustomAccordionItem key={faq.id} item={faq} />
+                ))}
+              </Accordion>
+            </div>
 
-          {/* Column 3 */}
-          <div className="space-y-6">
-            <Accordion
-              type="single"
-              defaultValue={faqsColumn3.find(item => item.defaultOpen)?.id}
-              collapsible
-              className="space-y-6"
-            >
-              {faqsColumn3.map((faq) => (
-                <CustomAccordionItem key={faq.id} item={faq} />
-              ))}
-            </Accordion>
+            {/* Column 3 */}
+            <div className="space-y-4 sm:space-y-6">
+              <Accordion
+                type="single"
+                defaultValue={faqsColumn3.find(item => item.defaultOpen)?.id}
+                collapsible
+                className="space-y-4 sm:space-y-6"
+              >
+                {faqsColumn3.map((faq) => (
+                  <CustomAccordionItem key={faq.id} item={faq} />
+                ))}
+              </Accordion>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

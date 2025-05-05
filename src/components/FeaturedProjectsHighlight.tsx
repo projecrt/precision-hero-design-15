@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const FeatureItem = ({
   title,
@@ -12,13 +13,13 @@ const FeatureItem = ({
   description: string;
 }) => {
   return (
-    <div className="flex items-start space-x-3">
+    <div className="flex items-start space-x-2 sm:space-x-3">
       <div className="mt-1 flex-shrink-0">
-        <Check className="h-4 w-4 text-highlight-yellow" />
+        <Check className="h-3 w-3 sm:h-4 sm:w-4 text-highlight-yellow" />
       </div>
       <div>
-        <h4 className="font-bold text-white text-sm">{title}</h4>
-        <p className="text-xs text-[#CBD5E1]">{description}</p>
+        <h4 className="font-bold text-white text-xs sm:text-sm">{title}</h4>
+        <p className="text-[10px] sm:text-xs text-[#CBD5E1]">{description}</p>
       </div>
     </div>
   );
@@ -30,15 +31,17 @@ const PartnerLogo = ({
   name: string;
 }) => {
   return (
-    <div className="text-white font-bold text-sm">
+    <div className="text-white font-bold text-xs sm:text-sm">
       {name}
     </div>
   );
 };
 
 const FeaturedProjectsHighlight = () => {
+  const isMobile = useIsMobile();
+  
   return (
-    <section className="py-16 relative overflow-hidden bg-[#0A0F12]">
+    <section className="py-12 sm:py-16 relative overflow-hidden bg-[#0A0F12] px-4">
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <svg viewBox="0 0 200 800" xmlns="http://www.w3.org/2000/svg">
@@ -46,29 +49,29 @@ const FeaturedProjectsHighlight = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="max-w-2xl mb-12">
+      <div className="container mx-auto px-3 sm:px-6 max-w-5xl">
+        <div className="max-w-full sm:max-w-2xl mb-8 sm:mb-12">
           {/* Badge */}
-          <Badge variant="outline" className="mb-4 text-gray-400 uppercase text-xs tracking-wider border-[#374151] px-2 py-1">
+          <Badge variant="outline" className="mb-3 sm:mb-4 text-gray-400 uppercase text-[10px] sm:text-xs tracking-wider border-[#374151] px-2 py-1 sm:px-2 sm:py-1">
             FEATURED PROJECTS
           </Badge>
           
           {/* Heading - Updated styling */}
-          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-6">
             We Give Precision<br />
             <span className="text-highlight-yellow">Efficiency And Excellence For Services.</span>
           </h2>
           
           {/* CTA Button - Updated to pill shape with more padding */}
-          <Button className="bg-white hover:bg-gray-100 text-gray-900 rounded-full px-6 py-3 text-sm font-medium">
-            Learn More <ArrowRight className="ml-1 h-4 w-4" />
+          <Button className="bg-white hover:bg-gray-100 text-gray-900 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium">
+            Learn More <ArrowRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
         </div>
         
         {/* Middle Grid - Updated with proper rounded corners */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
           {/* Left Image - Added more rounded corners */}
-          <div className="lg:col-span-2 rounded-2xl overflow-hidden h-80">
+          <div className="lg:col-span-2 rounded-xl sm:rounded-2xl overflow-hidden h-60 sm:h-80">
             <img 
               alt="Engineers in industrial setting" 
               className="w-full h-full object-cover" 
@@ -77,8 +80,8 @@ const FeaturedProjectsHighlight = () => {
           </div>
           
           {/* Right Feature Grid - Updated background color and padding */}
-          <div className="bg-[#1E293B] rounded-2xl p-6">
-            <div className="grid grid-cols-2 gap-5">
+          <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
               <FeatureItem 
                 title="Industry-Leading Accuracy" 
                 description="Precision engineering with tight tolerances" 
@@ -100,7 +103,7 @@ const FeaturedProjectsHighlight = () => {
         </div>
         
         {/* Partner Logos - Better spacing and alignment */}
-        <div className="flex flex-wrap justify-center items-center gap-12 py-4">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-12 py-4">
           <PartnerLogo name="IPSUM" />
           <PartnerLogo name="LOGOIPSUM" />
           <PartnerLogo name="LOGO" />
