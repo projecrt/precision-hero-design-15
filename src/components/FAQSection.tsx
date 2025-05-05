@@ -78,13 +78,13 @@ const FAQSection = () => {
     return (
       <AccordionItem value={item.id} className="mb-6 border-none">
         <AccordionTrigger
-          className={`px-6 py-4 hover:no-underline hover:text-opacity-80 font-medium text-base rounded-2xl ${
+          className={`px-6 py-4 hover:no-underline hover:text-opacity-80 font-medium text-base rounded-2xl w-full h-16 flex items-center ${
             item.defaultOpen
               ? "bg-blue-900 text-white"
               : "bg-slate-100 text-gray-900"
           }`}
         >
-          {item.question}
+          <div className="text-left flex-1">{item.question}</div>
           {item.defaultOpen ? (
             <ChevronUp className="h-5 w-5 shrink-0" />
           ) : (
