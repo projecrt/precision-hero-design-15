@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -6,7 +5,7 @@ import { Play } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-sky-950 min-h-[90vh] flex items-center">
+    <section className="bg-[#0A1A20] min-h-[90vh] flex items-center">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Left content - Main heading and CTA */}
