@@ -65,10 +65,10 @@ const FeaturedProjectsHighlight = () => {
         
         {/* Middle Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-16">
-          {/* Left Image */}
+          {/* Left Image - Updated with reliable image */}
           <div className="lg:col-span-3 rounded-2xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1581093458791-9d2b12bbc75c" 
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
               alt="Engineers in industrial setting"
               className="w-full h-full object-cover"
             />

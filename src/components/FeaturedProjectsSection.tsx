@@ -100,25 +100,25 @@ const FeaturedProjectsSection = () => {
         
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Full-width Top Project */}
+          {/* Full-width Top Project - Updated with the uploaded image */}
           <ProjectCard 
-            title="Automotive Precision Parts"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus."
-            imageUrl="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
+            title="Precision Laser Cutting"
+            description="High-precision metal fabrication with advanced laser technology."
+            imageUrl="/lovable-uploads/9d3d61ff-3d00-4d16-8b53-70f573b03f22.png"
             isWide={true}
           />
           
-          {/* Half-width Projects */}
+          {/* Half-width Projects - Updated with reliable placeholder images */}
           <ProjectCard 
             title="Industrial Machinery Components"
-            description="Consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper."
-            imageUrl="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
+            description="Specialized components crafted for industrial applications with tight tolerances."
+            imageUrl="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"
           />
           
           <ProjectCard 
             title="Architectural Metalworks"
-            description="Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
-            imageUrl="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+            description="Custom metal fabrication for architectural projects and artistic installations."
+            imageUrl="https://images.unsplash.com/photo-1518770660439-4636190af475"
           />
         </div>
       </div>
