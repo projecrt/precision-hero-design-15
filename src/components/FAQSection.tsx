@@ -73,35 +73,29 @@ const FAQSection = () => {
     },
   ];
 
-  // Custom AccordionItem style based on open/closed state
+  // Custom AccordionItem component - fixed to not use render props incorrectly
   const CustomAccordionItem = ({ item }) => {
     return (
       <AccordionItem value={item.id} className="mb-6 border-none">
-        {({ value, open }) => (
-          <div
-            className={`rounded-2xl transition-all ${
-              open
-                ? "bg-blue-900 text-white"
-                : "bg-slate-100 text-gray-900"
-            }`}
-          >
-            <AccordionTrigger
-              className={`px-6 py-4 hover:no-underline hover:text-opacity-80 font-medium text-base ${
-                open ? "text-white" : "text-gray-900"
-              }`}
-            >
-              {item.question}
-              {open ? (
-                <ChevronUp className="h-5 w-5 shrink-0" />
-              ) : (
-                <ChevronDown className="h-5 w-5 shrink-0 text-gray-400" />
-              )}
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-4 pt-0 text-gray-500 text-sm">
-              {item.answer}
-            </AccordionContent>
-          </div>
-        )}
+        <AccordionTrigger
+          className={`px-6 py-4 hover:no-underline hover:text-opacity-80 font-medium text-base rounded-2xl ${
+            item.defaultOpen
+              ? "bg-blue-900 text-white"
+              : "bg-slate-100 text-gray-900"
+          }`}
+        >
+          {item.question}
+          {item.defaultOpen ? (
+            <ChevronUp className="h-5 w-5 shrink-0" />
+          ) : (
+            <ChevronDown className="h-5 w-5 shrink-0 text-gray-400" />
+          )}
+        </AccordionTrigger>
+        <AccordionContent className={`px-6 pb-4 pt-0 text-gray-500 text-sm ${
+          item.defaultOpen ? "bg-blue-900 rounded-b-2xl" : ""
+        }`}>
+          {item.answer}
+        </AccordionContent>
       </AccordionItem>
     );
   };
