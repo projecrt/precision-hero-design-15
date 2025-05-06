@@ -9,7 +9,6 @@ import BusinessNumbersSection from '../components/BusinessNumbersSection';
 import ClientTestimonialSection from '../components/ClientTestimonialSection';
 import FAQSection from '../components/FAQSection';
 import ConsultationBanner from '../components/ConsultationBanner';
-import BlogSection from '../components/BlogSection';
 import FinalCTA from '../components/FinalCTA';
 
 function Index() {
@@ -24,7 +23,6 @@ function Index() {
       <ClientTestimonialSection />
       <FAQSection />
       <ConsultationBanner />
-      <BlogSection />
       <FinalCTA />
     </>
   );
