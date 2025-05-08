@@ -8,7 +8,6 @@ import FeaturedProjectsHighlight from '../components/FeaturedProjectsHighlight';
 import ClientTestimonialSection from '../components/ClientTestimonialSection';
 import BusinessNumbersSection from '../components/BusinessNumbersSection';
 import FAQSection from '../components/FAQSection';
-import ConsultationBanner from '../components/ConsultationBanner';
 import FinalCTA from '../components/FinalCTA';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -25,7 +24,6 @@ const IndexUpdate = () => {
       <ClientTestimonialSection />
       <BusinessNumbersSection />
       <FAQSection />
-      <ConsultationBanner />
       <FinalCTA />
       <Footer />
     </div>

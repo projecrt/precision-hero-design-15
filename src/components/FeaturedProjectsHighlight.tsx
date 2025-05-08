@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -39,75 +38,66 @@ const PartnerLogo = ({
 
 const FeaturedProjectsHighlight = () => {
   const isMobile = useIsMobile();
-  
+
   return (
     <section className="py-12 sm:py-16 relative overflow-hidden bg-[#0A0F12] px-4">
-      {/* Background Pattern */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
-        <svg viewBox="0 0 200 800" xmlns="http://www.w3.org/2000/svg">
-          <path d="M42.8,-65.2C56.6,-59.3,69.7,-50,76.8,-37.1C84,-24.1,85.1,-7.5,81.6,7.3C78,22,69.8,35,59.3,44.9C48.8,54.9,35.9,62,22.1,67.3C8.2,72.6,-6.8,76.1,-20.8,73.5C-34.9,70.9,-48,62.3,-57.3,50.6C-66.5,38.9,-71.9,24.2,-74.1,9.1C-76.4,-6,-75.5,-21.5,-68,-32.2C-60.5,-43,-46.3,-49,-33.6,-54.8C-20.8,-60.7,-9.6,-66.5,2.4,-70.2C14.4,-73.9,28.9,-71.1,42.8,-65.2Z" fill="none" stroke="white" strokeWidth="1" transform="translate(100 400) scale(2)" />
-        </svg>
-      </div>
-
       <div className="container mx-auto px-3 sm:px-6 max-w-5xl">
         <div className="max-w-full sm:max-w-2xl mb-8 sm:mb-12">
           {/* Badge */}
           <Badge variant="outline" className="mb-3 sm:mb-4 text-gray-400 uppercase text-[10px] sm:text-xs tracking-wider border-[#374151] px-2 py-1 sm:px-2 sm:py-1">
             FEATURED PROJECTS
           </Badge>
-          
-          {/* Heading - Updated styling */}
+
+          {/* Heading */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-6">
             We Give Precision<br />
             <span className="text-highlight-yellow">Efficiency And Excellence For Services.</span>
           </h2>
-          
-          {/* CTA Button - Updated to pill shape with more padding */}
+
+          {/* CTA Button */}
           <Button className="bg-white hover:bg-gray-100 text-gray-900 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium">
             Learn More <ArrowRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
         </div>
-        
-        {/* Middle Grid - Updated with proper rounded corners */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
-          {/* Left Image - Added more rounded corners */}
-          <div className="lg:col-span-2 rounded-xl sm:rounded-2xl overflow-hidden h-60 sm:h-80">
-            <img 
-              alt="Engineers in industrial setting" 
-              className="w-full h-full object-cover" 
-              src="/lovable-uploads/29982958-a02a-46c9-86fb-fdd0b5dc6481.png" 
+
+        {/* Middle Grid - Overlap Applied */}
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10 sm:mb-16">
+          {/* Left Image */}
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden h-60 sm:h-80 w-full">
+            <img
+              alt="Engineers in industrial setting"
+              className="w-full h-full object-cover"
+              src="/lovable-uploads/29982958-a02a-46c9-86fb-fdd0b5dc6481.png"
             />
           </div>
-          
-          {/* Right Feature Grid - Updated background color and padding */}
-          <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
+
+          {/* Right Feature Grid with Overlap */}
+          <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 w-1/2
+                lg:absolute lg:right-0 lg:bottom-12 lg:-translate-x-1/4 lg:translate-y-1/4 shadow-xl">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8">
               <FeatureItem 
-                title="Industry-Leading Accuracy" 
-                description="Precision engineering with tight tolerances" 
+                title="3kW Laser Cutting System" 
+                description="High-powered laser for fast, clean, and accurate cuts" 
               />
               <FeatureItem 
-                title="Fast Turnaround Time" 
-                description="Efficient production with quick delivery" 
+                title="5-Axis CNC Precision" 
+                description="CNC-controlled machining for complex, multi-directional operations" 
               />
               <FeatureItem 
-                title="Custom Solutions" 
-                description="Tailored manufacturing to your needs" 
+                title="1-Inch Thick Material Capacity" 
+                description="Handles thick metals with consistent quality and finish" 
               />
               <FeatureItem 
-                title="Eco-Friendly Processes" 
-                description="Sustainable production methods" 
+                title="Automated Material Handling" 
+                description="Streamlined workflow for faster, safer production" 
+              />
+              <FeatureItem 
+                title="CAD/CAM Integrated Workflow" 
+                description="Seamless design-to-production process with minimal manual setup" 
               />
             </div>
           </div>
-        </div>
-        
-        {/* Partner Logos - Better spacing and alignment */}
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-12 py-4">
-          <PartnerLogo name="IPSUM" />
-          <PartnerLogo name="LOGOIPSUM" />
-          <PartnerLogo name="LOGO" />
-          <PartnerLogo name="LUMY" />
         </div>
       </div>
     </section>

@@ -99,3 +99,63 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: no-preference) {
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Optimize scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimize images */
+img {
+  content-visibility: auto;
+}
+
+/* Optimize text rendering */
+.text-optimize {
+  text-rendering: optimizeLegibility;
+}
+
+/* Optimize transitions */
+.transition-optimize {
+  will-change: transform, opacity;
+}
+
+/* Optimize visibility transitions */
+.visible {
+  opacity: 1 !important;
+}
+
+/* Optimize background rendering */
+.bg-optimize {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Optimize blur effects */
+.backdrop-blur-optimize {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Optimize shadows */
+.shadow-optimize {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  will-change: box-shadow;
+}

@@ -1,5 +1,5 @@
-
 import React from 'react';
+import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import WhoWeAreSection from '../components/WhoWeAreSection';
 import WhatWeDoSection from '../components/WhatWeDoSection';
@@ -8,12 +8,12 @@ import FeaturedProjectsHighlight from '../components/FeaturedProjectsHighlight';
 import BusinessNumbersSection from '../components/BusinessNumbersSection';
 import ClientTestimonialSection from '../components/ClientTestimonialSection';
 import FAQSection from '../components/FAQSection';
-import ConsultationBanner from '../components/ConsultationBanner';
 import FinalCTA from '../components/FinalCTA';
 
 function Index() {
   return (
     <>
+      <Navbar />
       <HeroSection />
       <WhoWeAreSection />
       <WhatWeDoSection />
@@ -22,7 +22,6 @@ function Index() {
       <BusinessNumbersSection />
       <ClientTestimonialSection />
       <FAQSection />
-      <ConsultationBanner />
       <FinalCTA />
     </>
   );

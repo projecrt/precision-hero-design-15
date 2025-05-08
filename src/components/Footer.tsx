@@ -20,11 +20,13 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-gray-400" />
-                <span>Hello@Email.Co</span>
+                <span>aayushienterprise07@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-gray-400" />
-                <span>+91 84215 45876</span>
+                <span>+91 94283 04536</span>
+                <span>+91 87808 79909</span>
+                <span>+91 94273 13283</span>
               </div>
             </div>
           </div>
@@ -93,20 +95,6 @@ const Footer = () => {
               </Button>
             </div>
             
-            <div className="flex gap-3">
-              <button className="bg-gray-800 p-2.5 rounded-full hover:bg-gray-700 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </button>
-              <button className="bg-gray-800 p-2.5 rounded-full hover:bg-gray-700 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </button>
-              <button className="bg-gray-800 p-2.5 rounded-full hover:bg-gray-700 transition-colors">
-                <Youtube className="h-5 w-5" />
-              </button>
-              <button className="bg-gray-800 p-2.5 rounded-full hover:bg-gray-700 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </button>
-            </div>
           </div>
         </div>
         

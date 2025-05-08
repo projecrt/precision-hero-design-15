@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -14,7 +13,9 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const navRef = useRef(null);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -22,27 +23,37 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          if (navRef.current) {
+            if (currentScrollY > 10) {
+              navRef.current.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+              navRef.current.style.backdropFilter = 'blur(8px)';
+            } else {
+              navRef.current.style.backgroundColor = 'transparent';
+              navRef.current.style.backdropFilter = 'none';
+            }
+          }
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 w-full py-3 md:py-4 z-50 transition-all duration-300",
-      isScrolled ? "bg-sky-950/90 backdrop-blur-sm shadow-md" : "bg-transparent"
-    )}>
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
+    <nav 
+      ref={navRef}
+      className="fixed top-0 left-0 right-0 w-full py-3 md:py-4 z-50 transition-all duration-300 bg-transparent"
+    >
+      <div className="container-fluid mx-auto flex items-center justify-between px-4 md:px-6">
         <div className="text-white text-base sm:text-xl font-bold">Ayushi Enterprise</div>
-        
+
         {/* Mobile menu button */}
         <div className="md:hidden">
           <Button 
@@ -54,7 +65,7 @@ const Navbar = () => {
             {mobileMenuOpen ? <X /> : <Menu />}
           </Button>
         </div>
-        
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center space-x-3 lg:space-x-6">
           {navLinks.map((link) => (
@@ -70,11 +81,11 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        
+
         {/* CTA Button */}
         <div className="hidden md:block">
           <Button
-            className="bg-cta-blue hover:bg-blue-600 text-white rounded-full px-4 lg:px-6 py-1 lg:py-2 text-xs lg:text-sm"
+            className="bg-cta-blue hover:bg-blue-600 text-white rounded-full px-4 lg:px-6 py-1 lg:py-2 text-xs lg:text-sm transform-gpu"
           >
             Get A Queue
           </Button>

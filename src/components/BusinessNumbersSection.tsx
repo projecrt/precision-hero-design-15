@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -10,12 +9,16 @@ type MetricProps = {
   description: string;
 };
 
-const MetricBlock: React.FC<MetricProps> = ({ number, label, description }) => {
-  const isMobile = useIsMobile();
-  
+const MetricBlock: React.FC<MetricProps> = ({ 
+  number, 
+  label, 
+  description,
+}) => {
   return (
     <div className="flex flex-col items-center md:items-start">
-      <div className="text-yellow-400 text-3xl md:text-4xl font-bold">{number}</div>
+      <div className="text-yellow-400 text-3xl md:text-4xl font-bold">
+        {number}
+      </div>
       <div className="text-white font-medium text-sm md:text-base mt-2">{label}</div>
       <p className="text-gray-400 text-xs md:text-sm mt-1 text-center md:text-left">{description}</p>
     </div>
@@ -23,19 +26,21 @@ const MetricBlock: React.FC<MetricProps> = ({ number, label, description }) => {
 };
 
 const BusinessNumbersSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   const metrics: MetricProps[] = [
     {
-      number: "10Y +",
+      number: "1Y +",
       label: "Years Of Experience",
       description: "Curabitur nibh cum sed nisl donec porta.",
     },
     {
-      number: "5,457 +",
+      number: "3+",
       label: "Projects Done",
       description: "Curabitur nibh cum sed nisl donec porta.",
     },
     {
-      number: "248 +",
+      number: "20+",
       label: "Satisfied Clients",
       description: "Curabitur nibh cum sed nisl donec porta.",
     },
@@ -47,7 +52,10 @@ const BusinessNumbersSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#0A0F12] py-12 md:py-20 px-4">
+    <section 
+      ref={sectionRef} 
+      className="bg-[#0A0F12] py-12 md:py-20 px-4"
+    >
       <div className="container mx-auto max-w-7xl">
         <div className="mb-8 md:mb-12">
           <Badge
@@ -69,9 +77,7 @@ const BusinessNumbersSection: React.FC = () => {
           {metrics.map((metric, index) => (
             <MetricBlock
               key={index}
-              number={metric.number}
-              label={metric.label}
-              description={metric.description}
+              {...metric}
             />
           ))}
         </div>
